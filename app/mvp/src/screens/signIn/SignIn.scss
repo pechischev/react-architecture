@@ -1,0 +1,24 @@
+@import "~styles/theme.scss";
+@import "~styles/mixins.scss";
+
+.auth {
+    display: flex;
+    height: 100%;
+    background-color: map-get($grayscale, "grey-4");
+
+    &__container {
+        margin: auto;
+        min-width: 335px;
+    }
+}
+
+.login {
+    &__title {
+        @include set-font-style(700, 22px, "SFDisplay");
+
+        line-height: 30px;
+        text-align: center;
+        color: map-get($grayscale, "grey-0");
+        margin-bottom: 30px;
+    }
+}

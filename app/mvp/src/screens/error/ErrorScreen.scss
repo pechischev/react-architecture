@@ -1,0 +1,34 @@
+@import "~styles/theme.scss";
+@import "~styles/mixins.scss";
+
+.error {
+    @include square(100%);
+
+    display: flex;
+    background-color: map-get($grayscale, "grey-4");
+
+    &-message {
+        margin: auto;
+        text-align: center;
+    }
+}
+
+.error-message {
+    &__code,
+    &__message {
+        @include set-font-style(700, 40px, "SFDisplay");
+
+        margin: 5px 0;
+    }
+
+    &__note {
+        @include set-font-style(500, 14px, "SFDisplay");
+
+        margin-top: 25px;
+
+        a {
+            text-decoration: none;
+            color: map_get($colors, "blue");
+        }
+    }
+}

@@ -1,0 +1,88 @@
+{
+    "name": "react-mvp",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "clean": "lerna run clean",
+        "build": "lerna run build --stream",
+        "test": "echo 'test'",
+        "init:packages": "lerna bootstrap && yarn install",
+        "init:submodule": "git submodule update --init"
+    },
+    "dependencies": {
+        "axios": "^0.19.0",
+        "concurrently": "^4.1.0",
+        "cross-env": "^5.2.0",
+        "dotenv": "^8.1.0",
+        "eslint": "^6.1.0",
+        "gifsicle": "^4.0.1",
+        "lerna": "^3.16.4",
+        "lodash": "^4.17.15",
+        "react": "^16.8.6",
+        "react-dom": "^16.8.6",
+        "react-final-form": "^6.3.0",
+        "react-loadable": "^5.5.0",
+        "rimraf": "^2.6.3",
+        "rxjs": "^6.5.2",
+        "typescript": "^3.5.3"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.5.5",
+        "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
+        "@babel/preset-env": "^7.5.5",
+        "@babel/preset-typescript": "^7.3.3",
+        "@types/classnames": "^2.2.9",
+        "@types/history": "^4.7.3",
+        "@types/jest": "^24.0.18",
+        "@types/lodash": "^4.14.136",
+        "@types/node": "^12.6.9",
+        "@types/react": "^16.8.24",
+        "@types/react-dom": "^16.8.5",
+        "@types/react-loadable": "^5.5.1",
+        "babel-loader": "^8.0.6",
+        "circular-dependency-plugin": "^5.2.0",
+        "classnames": "^2.2.6",
+        "css-loader": "^3.2.0",
+        "eslint-config-prettier": "^6.0.0",
+        "eslint-plugin-prettier": "^3.1.0",
+        "file-loader": "^4.2.0",
+        "final-form": "^4.18.5",
+        "fork-ts-checker-webpack-plugin": "^1.5.0",
+        "hard-source-webpack-plugin": "^0.13.1",
+        "html-webpack-plugin": "^3.2.0",
+        "image-webpack-loader": "^5.0.0",
+        "node-sass": "^4.12.0",
+        "peer-deps-externals-webpack-plugin": "^1.0.4",
+        "prettier": "^1.17.1",
+        "sass-loader": "^7.1.0",
+        "style-loader": "^1.0.0",
+        "thread-loader": "^2.1.2",
+        "ts-loader": "^6.0.4",
+        "tslint": "^5.18.0",
+        "tslint-config-prettier": "^1.18.0",
+        "tslint-react": "^4.0.0",
+        "webpack": "^4.39.1",
+        "webpack-cli": "^3.3.6",
+        "webpack-dev-server": "^3.7.2",
+        "webpack-node-externals": "^1.7.2"
+    },
+    "workspaces": [
+        "packages/*",
+        "app/*",
+        "modules/*"
+    ],
+    "main": "index.js",
+    "repository": "https://github.com/pechischev/react-mvp.git",
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    }
+}

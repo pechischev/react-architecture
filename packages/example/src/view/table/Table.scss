@@ -1,0 +1,71 @@
+@import "~styles/theme.scss";
+@import "~styles/mixins.scss";
+
+.table {
+    width: 100%;
+    position: relative;
+
+    &-header {
+        $content-offset: map-get($padding, "section-content");
+
+        position: relative;
+        background-color: map-get($grayscale, "grey-6");
+        height: 70px;
+
+        &::before, &::after {
+            @include position(absolute, $top: 0);
+
+            content: "";
+            width: $content-offset;
+            height: 70px;
+            background-color: map-get($grayscale, "grey-6");
+        }
+
+        &::before {
+            left: -$content-offset;
+        }
+
+        &::after {
+            right: -$content-offset;
+        }
+    }
+}
+
+.row {
+    &:hover {
+        background-color: map-get($grayscale, "grey-6");
+        cursor: pointer;
+    }
+
+    &-heading:hover {
+        cursor: default;
+    }
+}
+
+.cell {
+    height: 45px;
+    padding: 15px 10px;
+    @include set-font-style(400, 13px, "SFText");
+
+    $cell-align: left, right, center, justify;
+
+    @each $align in $cell-align {
+        &_#{$align} {
+            text-align: $align;
+        }
+    }
+
+    &_selectable {
+        width: 40px;
+    }
+
+    &-heading {
+        height: 60px;
+        padding: 10px;
+        color: map-get($grayscale, "grey-1");
+        font-size: 11px;
+        line-height: 16px;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+    }
+}

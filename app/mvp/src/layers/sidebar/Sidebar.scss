@@ -1,0 +1,89 @@
+@import "~styles/theme.scss";
+@import "~styles/mixins.scss";
+
+.app-sidebar {
+    display: flex;
+    width: 120px;
+    flex-direction: column;
+    background: map-get($colors, "dark_blue");
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 20px 15px;
+}
+
+.link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0;
+    text-decoration: none;
+
+    &__icon {
+        display: flex;
+        width: 44px;
+        height: 44px;
+        margin: 19px 21px;
+
+        &_active {
+            opacity: 0;
+            display: none;
+        }
+
+        &_inactive {
+            display: flex;
+        }
+    }
+
+    &__label {
+        @include set-font-style(600, 11px, "SFText");
+
+        width: 100%;
+        text-align: center;
+        color: map-get($grayscale, "grey-3");
+    }
+
+    &_active, &:hover {
+        .link {
+            &__icon {
+                &_active {
+                    animation: imageShow 0.2s ease-out;
+                    opacity: 1;
+                    display: flex;
+                }
+                &_inactive {
+                    display: none;
+                }
+            }
+
+            &__label {
+                color: map-get($grayscale, "grey-6");
+                transition: 0.25s;
+            }
+        }
+    }
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    &:last-child {
+        position: absolute;
+        margin-bottom: 0;
+        bottom: 20px;
+    }
+}
+
+@keyframes imageShow {
+    from {
+        opacity: 0.5;
+        display: flex;
+    }
+    to {
+        opacity: 1;
+        display: flex;
+    }
+}

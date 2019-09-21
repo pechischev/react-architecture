@@ -1,0 +1,18 @@
+version: '3.2'
+services:
+    node_builder:
+        image: ${CONTAINER_BUILD_NAME:-mvp}
+        build:
+            context: .
+        volumes:
+            - ${PROJECT_BUILD_LOCATION}:/usr/src/app/app/cms/build
+        container_name: ${CONTAINER_BUILD_NAME}
+        command: sh -c "npm run build"
+    web:
+        container_name: ${CONTAINER_NAME_WEB}
+        image: nginx:alpine
+        ports:
+            - ${NGINX_EXTERNAL_PORT:-1622}:80
+        volumes:
+            - ${PROJECT_BUILD_LOCATION}:/usr/share/nginx/html
+            - ./nginx-conf:/etc/nginx/conf.d

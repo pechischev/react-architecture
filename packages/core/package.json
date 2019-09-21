@@ -1,0 +1,23 @@
+{
+    "name": "@mvp/core",
+    "version": "1.0.0",
+    "main": "build/index.js",
+    "module": "build/index.js",
+    "typings": "build/index.d.ts",
+    "private": true,
+    "scripts": {
+        "build": "rimraf build && concurrently -n webpack,typescript \"webpack --mode production\" \"tsc --emitDeclarationOnly\" ",
+        "debug:win": "rimraf build && tsc && node %NODE_DEBUG_OPTION% build/index.js",
+        "test": "jest"
+    },
+    "dependencies": {
+        "axios": "0.19.0"
+    },
+    "devDependencies": {
+        "webpack": "^4.39.1",
+        "typescript": "3.5.3",
+        "jest": "^24.9.0",
+        "concurrently": "^4.1.1",
+        "rimraf": "^2.6.3"
+    }
+}

@@ -1,0 +1,64 @@
+@mixin crop-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@mixin square($size) {
+    height: $size;
+    width: $size;
+}
+
+@mixin set-size($width: null, $height: null) {
+    height: $height;
+    width: $width;
+}
+
+@mixin apply-hover-state() {
+    cursor: pointer;
+
+    &:hover {
+        opacity: 0.65;
+    }
+}
+
+@mixin position($position: null, $top: null, $right: null, $bottom: null, $left: null) {
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin set-image($url, $position: center, $bg-color: null) {
+    background-image: url($url);
+    background-position: $position;
+    background-repeat: no-repeat;
+    background-color: $bg-color;
+}
+
+@mixin set-size($width: null, $height: null) {
+    width: $width;
+    height: $height;
+}
+
+@mixin set-font(
+    $font-family: null,
+    $font-size: null,
+    $line-height: null,
+    $font-weight: null,
+    $letter-spacing: null,
+    $color: null
+) {
+    font-family: $font-family;
+    font-size: $font-size;
+    font-weight: $font-weight;
+    line-height: $line-height;
+    letter-spacing: $letter-spacing;
+    color: $color;
+}
+
+@mixin set-font-style($weight, $size, $family) {
+    font-weight: $weight;
+    font-size: $size;
+    font-family: $family;
+}

@@ -1,0 +1,33 @@
+{
+    "name": "@mvp/example",
+    "version": "1.0.0",
+    "main": "build/module.js",
+    "module": "build/module.js",
+    "typings": "build/module.d.ts",
+    "private": true,
+    "scripts": {
+        "build": "rimraf build && concurrently -n webpack,typescript \"webpack --config webpack.build.js --mode production\" \"tsc --emitDeclarationOnly\" ",
+        "start": "webpack-dev-server --mode=development --color",
+        "test": "jest"
+    },
+    "dependencies": {
+        "@mvp/core": "^1.0.0"
+    },
+    "peerDependencies": {
+        "@mvp/core": "^1.0.0",
+        "react": "16.9.0",
+        "react-dom": "16.9.0",
+        "react-router": "5.0.1",
+        "react-router-dom": "5.0.1"
+    },
+    "devDependencies": {
+        "@types/react-router": "5.0.3",
+        "@types/react-router-dom": "4.3.4",
+        "concurrently": "^4.1.1",
+        "rimraf": "^2.6.3",
+        "jest": "^24.9.0",
+        "typescript": "^3.5.3",
+        "webpack-dev-server": "^3.7.2",
+        "webpack": "^4.39.1"
+    }
+}

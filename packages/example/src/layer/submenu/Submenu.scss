@@ -1,0 +1,31 @@
+@import "~styles/theme.scss";
+
+.submenu {
+    display: flex;
+    height: 100%;
+    background: map-get($colors, "dark_blue");
+    flex-direction: column;
+    padding: 20px 40px;
+    opacity: 0.9;
+
+
+    &__title {
+        color: map-get($grayscale, 'grey-6');
+        font-size: 22px;
+    }
+
+    &__title,
+    &__link {
+        margin: 20px 0;
+        color: map-get($grayscale, 'grey-3');
+    }
+
+    &__link {
+        text-decoration: none;
+
+        &_active,
+        &:hover {
+            color: map-get($grayscale, 'grey-6');
+        }
+    }
+}
