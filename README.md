@@ -1,4 +1,4 @@
-#React-MVP.
+# React Arhitecture
 
 ### Содержание
 
